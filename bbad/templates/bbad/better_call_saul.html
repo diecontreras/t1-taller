@@ -1,0 +1,21 @@
+{% extends 'bbad/base.html' %}
+
+{% block content %}
+
+<h2> Better Call Saul temporada {{season.id}}</h2>
+{% if season|length > 1 %}
+  <div class="temporadas">
+    <div class="column">
+      <ul>
+        {% for i in season.values%}
+          {% if i.episode %}
+            <li class="active"> <a href="/episode/{{i.episode_id}}"> {{i.episode}}.- {{i.title}} </a> </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% else %}
+<h4>Ha ocurrido un problema al buscar esa información</h4>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'bbad/base.html' %}
+
+{% block content %}
+
+{% if info|length > 1%}
+  <h2> Capítulo {{info.episode}}: {{info.title}}</h2>
+    <div class="container">
+      <div class="row">
+        <ul>
+          <li> Temporada: {{info.season}}</li>
+          <li> Serie: {{info.series}}</li>
+          <li> Fecha: {{info.air_date}}</li>
+          <br>
+          <li> Actores: </li>
+          <ul>
+            {% for i in info.characters %}
+              <li class="active"> <a href="/{{i}}"> {{i}} </a> </li>
+            {% endfor %}
+          </ul>
+          <br>
+        </ul>
+      </div>
+    </div>
+
+{% else %}
+  <h2>Ha ocurrido un error {{info.error}}</h2>
+{% endif %}
+
+{% endblock %}
