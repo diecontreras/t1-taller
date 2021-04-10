@@ -17,7 +17,6 @@ Faker==0.9.1
 Flask==1.0.3
 google==2.0.2
 gunicorn==19.9.0
-gurobipy==9.0.2
 html5lib==1.0.1
 idna==2.7
 ipykernel==4.8.2
