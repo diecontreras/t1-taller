@@ -20,10 +20,12 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include('bbad.urls')),
 
-    path('breaking_bad/<int:id>', include('bbad.urls')),
-    path('better_call_saul/<int:id>', include('bbad.urls')),
+    path('breaking_bad/<int:id>/', include('bbad.urls')),
+    path('better_call_saul/<int:id>/', include('bbad.urls')),
 
-    path('episode/<int:id>', include('bbad.urls')),
-    path('search/<str:name>', include('bbad.urls')),
+    path('episode/<int:id>/', include('bbad.urls')),
+    path('character/<str:name>/', include('bbad.urls')),
+
+    path('searchs/', include('bbad.urls'))
 
 ]

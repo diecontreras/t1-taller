@@ -52,8 +52,8 @@
                                 </div>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                                <form class="search">
-                                    <input class="form-control" type="text" placeholder=" Busca a un personaje ">
+                                <form  action="{% url 'search' %}" method="GET" >
+                                    <input name="name" type="text" placeholder=" Busca a un personaje ">
                                     <button type="submit"> Buscar </button>
                                 </form>
                             </div>

@@ -9,28 +9,28 @@
           <img src="{{charr.img}}" width="200">
           <br>
           <br>
-          <li> Apodo: {{charr.nickname}}</li>
-          <li> Ocupación: {{charr.occupation}} </li>
-          <li> Estado: {{charr.status}}</li>
-          <li> Serie en que participa: {{charr.category}}</li>
-          <li> Actor: {{charr.portrayed}}</li>
+          <li> <b>Apodo:</b> {{charr.nickname}}</li>
+          <li> <b>Ocupación:</b> {{charr.occupation}} </li>
+          <li> <b>Estado:</b> {{charr.status}}</li>
+          <li> <b>Serie en que participa:</b> {{charr.category}}</li>
+          <li> <b>Actor:</b> {{charr.portrayed}}</li>
           <br>
-          <li> Temporadas que aparece en Breaking Bad: </li>
+          <li> <b>Temporadas que aparece en Breaking Bad:</b> </li>
             <ul>
               {% for i in charr.appearance %}
-                <li class="active"> <a href="breaking_bad/{{i}}"> Temporada {{i}} </a> </li>
+                <li class="active"> <a href="/breaking_bad/{{i}}"> Temporada {{i}} </a> </li>
               {% endfor %}
             </ul>
           <br>
-          <li> Temporadas que aparece en Better Call Saul: </li>
+          <li> <b>Temporadas que aparece en Better Call Saul:</b> </li>
             <ul>
               {% for i in charr.better_call_saul_appearance %}
-                <li class="active"> <a href="better_call_saul/{{i}}"> Temporada {{i}} </a> </li>
+                <li class="active"> <a href="/better_call_saul/{{i}}"> Temporada {{i}} </a> </li>
               {% endfor %}
             </ul>
           <br>
           <br>
-          <li> Citas del personaje: </li>
+          <li> <b>Citas del personaje: </b></li>
           <br>
             <ul>
               {% for i in charr.quotes %}

@@ -93,6 +93,8 @@ def episode(request, id):
     if int(episodes[i]['episode_id']) == id:
       info = episodes[i]
 
+  print("\n", info, "\n")
+
   return render(request, "bbad/episode.html/", {'info': info})
 
 def character(request, name):
@@ -116,17 +118,21 @@ def character(request, name):
   return render(request, "bbad/character.html/", {"charr": charr})
 
 
-def search(request, name):
-  response = requests.get('https://tarea-1-breaking-bad.herokuapp.com/api/characters/?name=' + name)
-  char = response.json()
-  charr = char[0]
-  aux = ''
+def search(request):
+  url = 'https://tarea-1-breaking-bad.herokuapp.com/api/characters/?name='
+  param = request.GET.get('name')
 
-  for i in charr['occupation']:
-    aux += i 
-    aux += ', '
+  aux = url + param
+  busquedas = requests.get(aux).json()
 
-  charr['occupation'] = aux
+  result = {}
+  sss = []
+  for i in range(len(busquedas)):
+    sss.append(busquedas[i]['name'])
 
-  return render(request, "bbad/search.html/", {})
+  if len(sss) > 0:
+    result['names'] = sss
+
+  return render(request, "bbad/search.html", {"result": result})
+
   

@@ -1,5 +1,17 @@
 {% extends 'bbad/base.html' %}
 
 {% block content %}
-  <h2>Vamos que vamos</h2>
+
+  {% if result %}
+    {% for i in result.values %}
+    <ul>
+      {% for i in result.names %}
+        <li class="active"> <a href="/character/{{i}}"> {{i}} </a> </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  {% else %}
+    <h2>La búsqueda no arrojó resultados</h2>
+  {% endif %}
+
 {% endblock %}
